@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfq5qqom7lm1u"]
+
+[ext_resource type="Script" path="res://scripts/3b_to_local.gd" id="1_ojqso"]
+[ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="2_30l0g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xpx88"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_cb7da"]
+shading_mode = 0
+albedo_color = Color(1, 0.14, 0.971333, 1)
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_ojqso")
+world_point = Vector3(4, -0.5, 0)
+
+[node name="env" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_30l0g")
+
+[node name="debug" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="NODE" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.939692, -0.34202, 0, 0.34202, 0.939692, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="object" type="Marker3D" parent="NODE"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36636, -2.09358, 0)
+
+[node name="mesh" type="MeshInstance3D" parent="NODE/object"]
+mesh = SubResource("SphereMesh_xpx88")
+surface_material_override/0 = SubResource("ORMMaterial3D_cb7da")

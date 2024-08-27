@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjjl442pqyghb"]
+
+[ext_resource type="Script" path="res://scripts/4b_collision_basis.gd" id="1_tmkvs"]
+[ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="2_8qlup"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_754gi"]
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_tmkvs")
+
+[node name="env" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_8qlup")
+
+[node name="debug" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="marker_a" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21084, 1.05235, 0)
+
+[node name="ray" type="RayCast3D" parent="marker_a"]
+unique_name_in_owner = true
+target_position = Vector3(5, 0, 0)
+
+[node name="marker_b" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53183, 0.764511, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="marker_b"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="marker_b/StaticBody3D"]
+shape = SubResource("SphereShape3D_754gi")
