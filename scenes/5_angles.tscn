@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqxhkcg1ad8ia"]
+
+[ext_resource type="Script" path="res://scripts/5_angles.gd" id="1_ypdfh"]
+[ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="2_xwo0b"]
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_ypdfh")
+
+[node name="env" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_xwo0b")
+
+[node name="debug" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="marker_a" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1.00019, 0, 0, 0, 1.00019, 0, 0, 0, 1, -1.2, 1.2, 0)
+
+[node name="marker_b" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1.00014, 0, 0, 0, 1.00014, 0, 0, 0, 1, 1.2, 1.2, 0)
