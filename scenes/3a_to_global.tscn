@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxc4ww4mlan2a"]
+[gd_scene load_steps=4 format=3 uid="uid://cxc4ww4mlan2a"]
 
 [ext_resource type="Script" path="res://scripts/3a_to_global.gd" id="1_qttpc"]
 [ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="2_41qlh"]
+[ext_resource type="Script" path="res://scripts/debug_free.gd" id="2_vhw7p"]
 
 [node name="root" type="Node3D"]
-script = ExtResource("1_qttpc")
-local_point = Vector3(1, 0, 0)
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_41qlh")
 
 [node name="debug" type="Node3D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("2_vhw7p")
 
-[node name="NODE" type="Marker3D" parent="."]
+[node name="node" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.939692, -0.34202, 0, 0.34202, 0.939692, 0, 0, 0, 1, 2, 1, 0)
+transform = Transform3D(0.741758, -0.269978, 0.613927, -0.162569, 0.815717, 0.555136, -0.650665, -0.511582, 0.561176, 2, 1, 0)
+
+[node name="tool" type="Node" parent="."]
+script = ExtResource("1_qttpc")

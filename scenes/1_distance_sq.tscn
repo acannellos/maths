@@ -1,24 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://di5452imxcrdc"]
+[gd_scene load_steps=4 format=3 uid="uid://di5452imxcrdc"]
 
 [ext_resource type="Script" path="res://scripts/1_distance_sq.gd" id="1_dyxmn"]
+[ext_resource type="Script" path="res://scripts/debug_free.gd" id="2_j2orc"]
 [ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="3_dsf3s"]
 
 [node name="root" type="Node3D"]
-script = ExtResource("1_dyxmn")
-radius = 1.6
-color_in = Color(0.7252, 0.84, 0.672, 0.235294)
-color_out = Color(0.839216, 0.670588, 0.717647, 0.235294)
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_dsf3s")
 
 [node name="debug" type="Node3D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("2_j2orc")
 
 [node name="marker_a" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09719, 0.0437833, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.1, 0)
 
 [node name="marker_b" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.419332, 1.39228, 0)
+
+[node name="tool" type="Node" parent="."]
+script = ExtResource("1_dyxmn")

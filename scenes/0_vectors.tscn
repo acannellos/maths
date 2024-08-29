@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://br2ck3eha8vr7"]
+[gd_scene load_steps=4 format=3 uid="uid://br2ck3eha8vr7"]
 
 [ext_resource type="Script" path="res://scripts/0_vectors.gd" id="1_1s7yd"]
+[ext_resource type="Script" path="res://scripts/debug_free.gd" id="2_lgp6n"]
 [ext_resource type="Environment" uid="uid://cjrex33u6dkaa" path="res://env.tres" id="2_tpjcn"]
 
 [node name="root" type="Node3D"]
-script = ExtResource("1_1s7yd")
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_tpjcn")
 
 [node name="debug" type="Node3D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("2_lgp6n")
 
 [node name="marker_a" type="Marker3D" parent="."]
 unique_name_in_owner = true
@@ -19,3 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21145, 2.00976, 0)
 [node name="marker_b" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53183, 0.764511, 0)
+
+[node name="tool" type="Node" parent="."]
+script = ExtResource("1_1s7yd")
